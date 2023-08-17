@@ -1,0 +1,8 @@
+.my_input {
+   width: 100%;
+   border: 3px solid purple;
+   height: 40px;
+  border-radius: 10px;
+   padding-left: 20px;
+   font-size: 18px;
+}

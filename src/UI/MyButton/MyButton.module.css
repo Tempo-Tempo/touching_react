@@ -1,0 +1,12 @@
+.my_btn {
+   padding: 5px 35px;
+   color: teal;
+   font-size: 14px;
+   background: transparent;
+   border: 2px solid purple;
+   border-radius: 5px;
+   cursor: pointer;;
+   font-weight: bold;
+   color: white;
+   background-color: purple;
+}
