@@ -13,11 +13,16 @@ const MainPage = () => {
     setTask(tasksList.filter((t) => t !== remTask));
   };
 
+  const editTask = (task, value) => {
+    if(!value) return;
+    setTask(tasksList.map(t => t.id === task.id ? {...t, title: value} : t));
+  }
+
   return (
     <div className={style.main_page}>
       <h1>Test ToDo List on React</h1>
       <MyTaskForm addNewTask={addNewTask}/>
-      <MyTaskList tasksList={tasksList} removeTask={removeTask}/>
+      <MyTaskList tasksList={tasksList} removeTask={removeTask} editTask={editTask}/>
     </div>
   );
 };
