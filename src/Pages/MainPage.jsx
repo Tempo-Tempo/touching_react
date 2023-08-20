@@ -1,18 +1,23 @@
-import React, { useState, useRef } from "react";
+import React, { useContext, useState } from "react";
 import style from "../Pages/MainPage.module.css";
-import MyTaskForm from "../components/MyTaskForm";
-import MyTaskList from "../components/MyTaskList";
+import MyTasksPage from "./MyTasksPage";
+import { ArrCompletedTasks } from "../components/context";
+
+
 
 const MainPage = () => {
   const [tasksList, setTask] = useState([]);
+  const [ArrCompletedTask, setCompletedTask] = useContext(ArrCompletedTasks);
+  
   
   const addNewTask = (newTask) => {
     setTask([...tasksList, newTask]);  
   };
-  const removeTask = (remTask) => {
+  const completedTask = (remTask) => {
     setTask(tasksList.filter((t) => t !== remTask));
+    setCompletedTask([...ArrCompletedTask, remTask]);
   };
-
+console.log(ArrCompletedTask)
   const editTask = (task, value) => {
     if(!value) return;
     setTask(tasksList.map(t => t.id === task.id ? {...t, title: value} : t));
@@ -20,9 +25,7 @@ const MainPage = () => {
 
   return (
     <div className={style.main_page}>
-      <h1>Test ToDo List on React</h1>
-      <MyTaskForm addNewTask={addNewTask}/>
-      <MyTaskList tasksList={tasksList} removeTask={removeTask} editTask={editTask}/>
+        <MyTasksPage  tasksList={tasksList}  addNewTask={addNewTask} completedTask={completedTask} editTask={editTask} />
     </div>
   );
 };

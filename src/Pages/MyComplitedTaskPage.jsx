@@ -1,9 +1,14 @@
 import React from "react";
+import MyComplitedTasks from "../components/MyCompletedTasks";
+
+
 
 const MyComplitedTaskPage = () => {
-   return (
-      <h1>Сюда добавить завершенные задачи</h1>
-   )
-}
+  return (
+      <div>
+         <MyComplitedTasks/>
+      </div>
+  );
+};
 
 export default MyComplitedTaskPage;

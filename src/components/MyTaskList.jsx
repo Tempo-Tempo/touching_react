@@ -3,7 +3,7 @@ import "../app.css";
 
 import MyRow from "./MyRowTask";
 
-const MyTaskList = ({ tasksList, removeTask, editTask }) => {
+const MyTaskList = ({ tasksList, completedTask, editTask }) => {
   console.log(tasksList)
   return (
     <div className="wrapper_task_list">
@@ -12,7 +12,7 @@ const MyTaskList = ({ tasksList, removeTask, editTask }) => {
           <div className="task_list_title">Список задач: </div>
           {tasksList.map((todo) => (
             <MyRow
-              removeTask={() => removeTask(todo)}
+            completedTask={() => completedTask(todo)}
               onChange={(value) =>
                 tasksList.map((entry) =>
                   entry.id === todo.id ? editTask(entry, value) : entry

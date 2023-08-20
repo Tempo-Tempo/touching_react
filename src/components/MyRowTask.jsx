@@ -2,7 +2,7 @@ import React, { useCallback, useRef, useState } from "react";
 import MyButton from "../UI/MyButton/MyButton";
 import MyInput from "../UI/MyInput/MyInput";
 
-const MyRow = ({ value, onChange, removeTask }) => {
+const MyRow = ({ value, onChange, completedTask }) => {
   const [isEditing, setIsEditing] = useState(false);
   const inputRef = useRef();
 
@@ -32,7 +32,7 @@ const MyRow = ({ value, onChange, removeTask }) => {
           </span>
         )}
         <div className="btn_task">
-          <MyButton onClick={removeTask}>Удалить</MyButton>
+          <MyButton onClick={completedTask}>Завершить</MyButton>
           <MyButton onClick={onToggleEdit}>
             {isEditing ? "Сохранить" : "Изменить"}
           </MyButton>
