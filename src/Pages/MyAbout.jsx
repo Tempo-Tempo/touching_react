@@ -1,8 +1,12 @@
 import React from "react";
 
+
 const MyAbout = () => {
    return (
-      <h1>Тест тест тес</h1>
+      <div>
+          <h1>Тест тест тес</h1>
+      </div>
+     
    )
 }
 

@@ -64,15 +64,12 @@
    height: 50px;
    background: purple;
    display: flex;
-   justify-content: left;
+   justify-content: space-between;
    align-items: center;
-}
-
-.links {
    font-size: 18px;
    font-weight: bold;
-   display: flex;
 }
+
 
 .link {
    color: white;
@@ -121,4 +118,42 @@
    border-radius: 5px;
    padding: 10px;
    border: 2px solid purple;
+}
+
+.reg_form {
+   width: 30%;
+   position: absolute;
+   top: 10%;
+   left: 50%;
+   transform: translateX(-50%);
+   max-height: 500px;
+   padding: 30px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   background: rgb(6, 14, 47);
+   border: 2px solid purple;
+   border-radius: 5px;
+   margin-top: 45px;
+}
+.links_nav {
+   display: flex;
+   justify-content: space-between;
+   width: 100%;
+   align-items: center;
+}
+.reg_wrapper {
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+   align-items: center;
+}
+
+.error_mess {
+   color: red;
+   font-size: 14px;
+   position: absolute;
+   font-weight: bold;
+   bottom: 3%;
 }

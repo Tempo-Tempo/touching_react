@@ -2,11 +2,12 @@ import React from "react"
 import MyTaskForm from "../components/MyTaskForm";
 import MyTaskList from "../components/MyTaskList";
 import style from "./MainPage.module.css"
-import MyModal from "../UI/MyModal/MyModal";
+
 
 const MyTasksPage = ({tasksList, completedTask, editTask, addNewTask}) => {
   return (
     <div className={style.main_page}>
+      
       <h1 style={{ color: "Black" }}>Test ToDo List on React</h1>
       <MyTaskForm addNewTask={addNewTask} />
       <MyTaskList

@@ -25,6 +25,7 @@ console.log(ArrCompletedTask)
 
   return (
     <div className={style.main_page}>
+     
         <MyTasksPage  tasksList={tasksList}  addNewTask={addNewTask} completedTask={completedTask} editTask={editTask} />
     </div>
   );
