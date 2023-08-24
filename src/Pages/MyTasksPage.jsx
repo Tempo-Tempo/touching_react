@@ -7,7 +7,6 @@ import style from "./MainPage.module.css"
 const MyTasksPage = ({tasksList, completedTask, editTask, addNewTask}) => {
   return (
     <div className={style.main_page}>
-      
       <h1 style={{ color: "Black" }}>Test ToDo List on React</h1>
       <MyTaskForm addNewTask={addNewTask} />
       <MyTaskList

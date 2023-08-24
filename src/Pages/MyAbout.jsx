@@ -3,8 +3,8 @@ import React from "react";
 
 const MyAbout = () => {
    return (
-      <div>
-          <h1>Тест тест тес</h1>
+      <div  className="reg_wrapper">
+          <h1 className=""> This is ToDo App on react :)</h1>
       </div>
      
    )

@@ -2,16 +2,15 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { isAuthContext } from "./context";
 import MyButton from "../UI/MyButton/MyButton";
-import useAuth  from "./MyHooks/useAuth";
+
 
 const MyHeader = () => {
-  const [isAuth, setIsAuth] = useContext(isAuthContext);
-
-  console.log(useAuth)
-
+  const MyAuthContext = useContext(isAuthContext);
+  const logout = MyAuthContext.logout;
+  
   return (
     <div className="wrapper_header">
-      {isAuth ? (
+      {MyAuthContext.isAuth ? (
         <div className="links_nav">
           <div>
             <Link className="link" to="/About">
@@ -25,7 +24,8 @@ const MyHeader = () => {
             </Link>
           </div>
           <div>
-            <MyButton onClick={() => setIsAuth(false)}>Выйти</MyButton>
+          <span className="email_user">{MyAuthContext.authUser.email}</span>
+            <MyButton onClick={logout}> Выйти</MyButton>
           </div>
         </div>
       ) : (

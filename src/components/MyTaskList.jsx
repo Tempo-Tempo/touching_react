@@ -4,7 +4,6 @@ import "../app.css";
 import MyRow from "./MyRowTask";
 
 const MyTaskList = ({ tasksList, completedTask, editTask }) => {
-  console.log(tasksList)
   return (
     <div className="wrapper_task_list">
       {tasksList.length ? (

@@ -3,19 +3,17 @@ import MyHeader from "./components/MyHeader";
 import { ArrRoutes, beforeLoginRoutes } from "./components/MyRoutes/index";
 import { ArrCompletedTasks } from "./components/context";
 import { isAuthContext } from "./components/context";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import "./firebase";
 
 function App() {
   const [ArrCompletedTask, setCompletedTask] = useState([]);
-  const [isAuth, setIsAuth] = useState(false);
-
+  const MyAuthContext = useContext(isAuthContext);
   return (
     <ArrCompletedTasks.Provider value={[ArrCompletedTask, setCompletedTask]}>
-      <isAuthContext.Provider value={[isAuth, setIsAuth]}>
         <BrowserRouter>
           <MyHeader />
-          {isAuth ? (
+          {MyAuthContext.isAuth ? (
             <Routes>
               {ArrRoutes.map((r) => (
                 <Route
@@ -41,7 +39,6 @@ function App() {
             </Routes>
           )}
         </BrowserRouter>
-      </isAuthContext.Provider>
     </ArrCompletedTasks.Provider>
   );
 }

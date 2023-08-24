@@ -1,13 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import MyInput from "../UI/MyInput/MyInput";
 import MyButton from "../UI/MyButton/MyButton";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { isAuthContext } from "../components/context";
 
+
 const MyRegPage = () => {
    const [email, setEmail] = useState('');
    const [pass, setPass] = useState('');
-   const [isAuth, setIsAuth] = React.useContext(isAuthContext);
+   const MyAuthContext = useContext(isAuthContext);
+   const login = MyAuthContext.login;
+ 
+  
    
    const handleSingUp = (email, pass, e) => {
       e.preventDefault();
@@ -15,7 +19,7 @@ const MyRegPage = () => {
       createUserWithEmailAndPassword(auth, email, pass).then((newUser) => {
          const user = newUser.user;
          console.log(user)
-         setIsAuth(true);
+         login();
          setEmail('');
          setPass('');
       }).catch(console.error)
