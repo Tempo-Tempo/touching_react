@@ -4,6 +4,7 @@ import MyButton from "../UI/MyButton/MyButton";
 import {isAuthContext} from "../components/context/index"
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
+
 const MyLoginPage = () => {
    const [email, setEmail] = React.useState('');
    const [pass, setPass] = React.useState('');
@@ -30,11 +31,11 @@ const MyLoginPage = () => {
       })
    }
    
-
+ 
   
    return (
       <div className="reg_wrapper">
-         <h1>Login for to continue :)</h1>
+         <div style={{marginTop: 20}} className="text-3xl font-bold">Login for to continue :)</div>
          <form onSubmit={(e) => handleLogin(email, pass, e)} className="reg_form">
          <MyInput style={{marginBottom: 15}} type="email" onChange={(e) => setEmail(e.target.value)} value={email} placeholder={"Введите логин..."}/>
          <MyInput style={{marginBottom: 10}} type="password" onChange={(e) => setPass(e.target.value)}  value={pass} placeholder={"Введите пароль..."}/>

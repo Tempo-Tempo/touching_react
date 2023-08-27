@@ -1,35 +1,39 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import style from "../Pages/MainPage.module.css";
 import MyTasksPage from "./MyTasksPage";
 import { addTask } from "../components/store/CompletedTasksSlice";
-import { ArrCompletedTasks } from "../components/context";
 import { useDispatch, useSelector } from "react-redux";
-
+import { addNewTaskSlice, editTaskSlice, removeTaskSlice } from "../components/store/TasksListSlice";
 
 const MainPage = () => {
-  const [tasksList, setTask] = useState([]);
-  const [ArrCompletedTask, setCompletedTask] = useContext(ArrCompletedTasks);
   const dispatch = useDispatch();
-  const testArr = useSelector(state => state.completed.completedTasks)
-  
+  const tasksList = useSelector((state) => state.tasksList.tasksList);
+ 
+
   const addNewTask = (newTask) => {
-    setTask([...tasksList, newTask]);  
+    dispatch(addNewTaskSlice(newTask));
   };
   const completedTask = (remTask) => {
-    setTask(tasksList.filter((t) => t !== remTask));
-    setCompletedTask([...ArrCompletedTask, remTask]);
-    dispatch(addTask(remTask))
-    console.log(testArr);
+   dispatch(removeTaskSlice(remTask));
+    dispatch(addTask(remTask));
   };
-  const editTask = (task, value) => {
-    if(!value) return;
-    setTask(tasksList.map(t => t.id === task.id ? {...t, title: value} : t));
-  }
+  const editingTask = (task, value) => {
+    if (!value) return;
+    const editTask = {
+      task: task,
+      value: value,
+    }
+    dispatch(editTaskSlice(editTask))
+  };
 
   return (
     <div className={style.main_page}>
-     
-        <MyTasksPage  tasksList={tasksList}  addNewTask={addNewTask} completedTask={completedTask} editTask={editTask} />
+      <MyTasksPage
+        tasksList={tasksList}
+        addNewTask={addNewTask}
+        completedTask={completedTask}
+        editTask={editingTask}
+      />
     </div>
   );
 };

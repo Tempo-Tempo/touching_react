@@ -1,5 +1,6 @@
 .my_btn {
-   padding: 5px 35px;
+   min-width: 120px;;
+   min-height: 35px;
    color: teal;
    font-size: 14px;
    background: transparent;

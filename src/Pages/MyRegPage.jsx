@@ -27,7 +27,7 @@ const MyRegPage = () => {
 
    return (
       <div className="reg_wrapper">
-     <h1>Sing up for to continue :)</h1>
+     <h1 style={{marginTop: 20}} className="text-3xl font-bold">Sing up for to continue :)</h1>
           <form onSubmit={(e) => handleSingUp(email, pass, e)} className="reg_form">
          <MyInput style={{marginBottom: 15}} type="email" onChange={(e) => setEmail(e.target.value)} value={email} placeholder={"Задайте логин..."}/>
          <MyInput style={{marginBottom: 10}} onChange={(e) => setPass(e.target.value)}  value={pass} placeholder={"Задайте пароль..."}/>

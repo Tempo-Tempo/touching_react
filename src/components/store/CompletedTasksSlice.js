@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 
+
 const taskCompletedSlice = createSlice({
    name: 'completedArr',
    initialState: {
@@ -12,7 +13,9 @@ const taskCompletedSlice = createSlice({
          console.log(action);
          state.completedTasks = [...state.completedTasks, action.payload];
       },
-      removeTask() {},
+      removeTask(state, action) {
+         state.completedTasks = state.completedTasks.filter(task => task.id !== action.payload.id)
+      },
    }
 })
 
