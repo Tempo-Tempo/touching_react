@@ -1,35 +1,4 @@
 
-.wrapper_task_list {
-   width: 50%;
-   height: 100%;
-   border: 2px solid purple;
-   margin-top: 30px;
-   border-radius: 5px;
-   background: rgb(6, 14, 47);
-   display: flex;
-   justify-content: center;
-   align-items: center;
-}
-.task_list_title {
-   font-size: 24px;
-   font-weight: bold;
-   display: flex;
-   justify-content: center;
-   margin-bottom: 10px;
-   margin-top: 10px;
-}
-
-.tasks_list {
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   width: 100%;
-   height: 100%;
-}
-
-
-
 .link {
    color: white;
    margin-right: 15px;

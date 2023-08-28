@@ -14,8 +14,8 @@ const MyComplitedTasks = () => {
 
   return (
     <div className="w-full flex justify-center items-center flex-col">
-      <h1 style={{marginTop: 20}} className="text-3xl font-bold">Completed tasks list</h1>
-      <div className="w-1/2 h-full bg-purple-500 m-10 rounded-md border-2 border-black">
+      <h1 style={{marginTop: 10}} className="text-3xl font-bold">Completed tasks list</h1>
+      <div className="w-1/2 h-full bg-purple-500 m-5 rounded-md border-2 border-black">
   
         {ArrCompletedTask.length ? (
           <div className="flex flex-col w-full justify-center items-center">
