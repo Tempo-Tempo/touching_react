@@ -26,12 +26,12 @@ const MyRegPage = () => {
    }
 
    return (
-      <div className="reg_wrapper">
+      <div className={"w-full flex-col flex items-center"}>
      <h1 style={{marginTop: 20}} className="text-3xl font-bold">Sing up for to continue :)</h1>
-          <form onSubmit={(e) => handleSingUp(email, pass, e)} className="reg_form">
+          <form onSubmit={(e) => handleSingUp(email, pass, e)}  className={"w-1/4 h-50 bg-purple-500 p-3 mt-10 rounded-md flex flex-col"}>
          <MyInput style={{marginBottom: 15}} type="email" onChange={(e) => setEmail(e.target.value)} value={email} placeholder={"Задайте логин..."}/>
          <MyInput style={{marginBottom: 10}} onChange={(e) => setPass(e.target.value)}  value={pass} placeholder={"Задайте пароль..."}/>
-         <MyButton style={{marginTop: 10}} >Зарегистрироваться</MyButton>
+         <MyButton style={{marginTop: 15}} >Зарегистрироваться</MyButton>
       </form>
       </div>
      

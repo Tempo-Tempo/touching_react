@@ -16,7 +16,7 @@ const MyTaskForm = ({ addNewTask }) => {
   };
 
   return (
-    <form onSubmit={createTask} className="task_input">
+    <form onSubmit={createTask} className="flex w-1/2 justify-between">
       <MyInput
         value={task.title}
         onChange={(e) => setTask({ title: e.target.value, id: task.id })}

@@ -5,10 +5,10 @@ import MyRow from "./MyRowTask";
 
 const MyTaskList = ({ tasksList, completedTask, editTask }) => {
   return (
-    <div className="wrapper_task_list">
+    <div className={"w-1/2 h-full bg-purple-500 m-10 rounded-md border-2 border-black"}>
       {tasksList.length ? (
-        <div className="tasks_list">
-          <div className="task_list_title">Список задач: </div>
+        <div className="flex-col flex justify-center items-center">
+          <div className="text-2xl font-bold mt-3 mb-3">Список задач: </div>
           {tasksList.map((todo) => (
             <MyRow
             completedTask={() => completedTask(todo)}
@@ -23,7 +23,7 @@ const MyTaskList = ({ tasksList, completedTask, editTask }) => {
           ))}
         </div>
       ) : (
-        <div className="task_list_title">Список задач пуст :( </div>
+        <div className="text-2xl font-bold mt-3 mb-3 flex justify-center items-center">Список задач пуст :( </div>
       )}
     </div>
   );

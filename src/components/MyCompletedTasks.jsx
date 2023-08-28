@@ -13,21 +13,22 @@ const MyComplitedTasks = () => {
   };
 
   return (
-    <div className="wrapper_task_completed">
-      <h1 className="text-3xl font-bold">Completed tasks list</h1>
-      <div className="main_wrapper_completed">
+    <div className="w-full flex justify-center items-center flex-col">
+      <h1 style={{marginTop: 20}} className="text-3xl font-bold">Completed tasks list</h1>
+      <div className="w-1/2 h-full bg-purple-500 m-10 rounded-md border-2 border-black">
+  
         {ArrCompletedTask.length ? (
-          <div className="task_list_completed_title">
-            <div>Завершенные задачи: </div>
+          <div className="flex flex-col w-full justify-center items-center">
+                <div className="text-2xl font-bold mt-3 mb-3 flex text-white items-center justify-center">Завершенные задачи: </div>
             {ArrCompletedTask.map((t) => (
-              <div key={t.title} className="task">
-                <span className="task_title">{t.title}</span>
+              <div key={t.title} className="w-11/12 bg-white flex p-2 rounded-md border-black border-2 mb-4">
+                <span className="w-11/12 text-black p-2 font-bold">{t.title}</span>
                 <MyButton onClick={() => remove(t)}>Удалить</MyButton>
               </div>
             ))}
           </div>
         ) : (
-          <div className="task_list_completed_title">
+          <div className="text-2xl font-bold mt-3 mb-3 flex text-white items-center justify-center">
             Пока что нет завершенных задач :(
           </div>
         )}

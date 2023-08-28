@@ -1,9 +1,8 @@
 import React from "react";
-import style from "./MyInput.module.css"
 
 const MyInput = React.forwardRef((props, inputRef) => {
    return (
-      <input className={style.my_input} {...props} ref={inputRef}/>
+      <input className={"w-full border-2 text-black border-black p-2 rounded-md pl-5"} {...props} ref={inputRef}/>
    )
 })
 

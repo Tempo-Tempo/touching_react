@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import style from "../Pages/MainPage.module.css";
+import React from "react";
+
 import MyTasksPage from "./MyTasksPage";
 import { addTask } from "../components/store/CompletedTasksSlice";
 import { useDispatch, useSelector } from "react-redux";
@@ -27,7 +27,7 @@ const MainPage = () => {
   };
 
   return (
-    <div className={style.main_page}>
+    <div className={"w-full h-full flex flex-col justify-center items-center text-white"}>
       <MyTasksPage
         tasksList={tasksList}
         addNewTask={addNewTask}

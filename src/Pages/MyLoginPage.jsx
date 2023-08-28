@@ -34,13 +34,13 @@ const MyLoginPage = () => {
  
   
    return (
-      <div className="reg_wrapper">
-         <div style={{marginTop: 20}} className={"text-3xl font-bold "}>Login for to continue :)</div>
-         <form onSubmit={(e) => handleLogin(email, pass, e)} className="reg_form">
+      <div className={"w-full flex-col flex items-center"}>
+         <div style={{marginTop: 20}} className={"text-3xl font-bold text-black"}>Login for to continue :)</div>
+         <form onSubmit={(e) => handleLogin(email, pass, e)}  className={"w-1/4 bg-purple-500 p-3 mt-10 rounded-md relative flex flex-col"}>
          <MyInput style={{marginBottom: 15}} type="email" onChange={(e) => setEmail(e.target.value)} value={email} placeholder={"Введите логин..."}/>
          <MyInput style={{marginBottom: 10}} type="password" onChange={(e) => setPass(e.target.value)}  value={pass} placeholder={"Введите пароль..."}/>
-         <MyButton style={{marginTop: 10}}>Войти</MyButton>
-         {errorMes ? <div className="error_mess">Неверные логин или пароль, повторите попытку</div> : 
+         <MyButton style={{marginTop: 15}}>Войти</MyButton>
+         {errorMes ? <div className={"text-red-600 font-bold absolute bottom-14 left-9"}>Неверные логин или пароль, повторите попытку</div> : 
          <span className="error_mess"></span>}
       </form>
       </div>

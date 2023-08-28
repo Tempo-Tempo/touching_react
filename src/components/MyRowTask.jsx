@@ -12,27 +12,27 @@ const MyRow = ({ value, onChange, completedTask }) => {
   }, [onChange, isEditing]);
 
   return (
-    <div>
-      <div className="task">
+    
+      <div className="w-11/12 bg-white flex p-2 rounded-md border-black border-2 mb-4">
         {isEditing ? (
           <MyInput
-            style={{ width: "60%" }}
+            style={{ width: "91%", marginRight: 10 }}
             defaultValue={value}
             ref={inputRef}
           />
         ) : (
-          <span className="task_title">
+          <span className="w-11/12 text-black p-2 font-bold">
            {value}
           </span>
         )}
-        <div className="btn_task">
+        <div className="flex w-1/3 justify-between">
           <MyButton onClick={completedTask}>Завершить</MyButton>
           <MyButton onClick={onToggleEdit}>
             {isEditing ? "Сохранить" : "Изменить"}
           </MyButton>
         </div>
       </div>
-    </div>
+    
   );
 };
 
