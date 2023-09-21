@@ -1,6 +1,11 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+This project w
+
+https://github.com/Tempo-Tempo/touching_react/assets/108608565/63adeb89-b80f-4d2a-971c-51f9a767e2b8
+
+as bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
